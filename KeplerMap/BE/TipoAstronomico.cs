@@ -7,6 +7,7 @@ namespace BE
         Cumulo,
         Galaxia,
         SistemaSolar,
+        Estrella,
         Planeta,
         Luna
     }

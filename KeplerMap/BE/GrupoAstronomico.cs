@@ -1,7 +1,7 @@
 ﻿
 namespace BE
 {
-    internal class GrupoAstronomico : IComponenteAstronomico
+    public class GrupoAstronomico : IComponenteAstronomico
     {
         public string Nombre { get; set; }
         public string Tipo { get; set; }
