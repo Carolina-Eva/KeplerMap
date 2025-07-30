@@ -3,8 +3,8 @@ namespace BE
 {
     public enum TipoAstronomico
     {
-        Supercumulo,
-        Cumulo,
+        Supercúmulo,
+        Cúmulo,
         Galaxia,
         SistemaSolar,
         Estrella,
