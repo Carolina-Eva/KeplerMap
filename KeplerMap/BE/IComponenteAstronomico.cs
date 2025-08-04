@@ -1,4 +1,6 @@
-﻿namespace BE
+﻿using System.ComponentModel;
+
+namespace BE
 {
     public interface IComponenteAstronomico
     {
@@ -8,9 +10,8 @@
         public double Masa { get; set; }
         public double Distancia { get; set; }
         public bool EsGrupo { get; set; }
-        public TipoAstronomico TipoObjeto { get; set; }
         public IComponenteAstronomico Padre { get; set; }
-        int? PadreId { get; set; }
+        public int? PadreId { get; set; }
 
         public abstract double ObtenerMasaTotal();
         public abstract void Agregar(IComponenteAstronomico componente);

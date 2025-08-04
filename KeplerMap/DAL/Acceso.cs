@@ -68,31 +68,24 @@ namespace DAL
             }
         }
 
-        public async Task<int> EscribirConReturn(string sql, List<SqlParameter> parameters = null)
+        public async Task<(int Codigo, string Mensaje)> EscribirConMensajes(string sql, List<SqlParameter> parameters = null)
         {
             using (var connection = await CrearConexion())
             using (var cmd = CrearComando(sql, connection, parameters))
             {
                 try
                 {
-                    var returnParam = new SqlParameter
-                    {
-                        ParameterName = "@ReturnCode",
-                        SqlDbType = SqlDbType.Int,
-                        Direction = ParameterDirection.ReturnValue
-                    };
-                    cmd.Parameters.Add(returnParam);
-
-                    await cmd.ExecuteNonQueryAsync();
-
-                    return (int)(returnParam.Value ?? -3);
+                    int result = await cmd.ExecuteNonQueryAsync();
+                    return (result, "Elemento eliminado correctamente");
                 }
                 catch (SqlException ex)
                 {
-                    return -3;
+                    int result = -1;
+                    return (result, ex.Message);
                 }
             }
         }
+
 
 
         public async Task<int> ObtenerEscalar(string sql, List<SqlParameter> parameters = null)
@@ -105,7 +98,7 @@ namespace DAL
                     var result = await cmd.ExecuteScalarAsync();
                     return result != null ? Convert.ToInt32(result) : -1;
                 }
-                catch (SqlException)
+                catch (SqlException ex)
                 {
                     return -1;
                 }

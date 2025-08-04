@@ -36,6 +36,15 @@ namespace BLL
             }
         }
 
+        public async Task<List<IComponenteAstronomico>> ListarElementosPorIdAsync(int id)
+        {
+            var lista = await _repository.ListarElementosPorId(id);
+            if (lista == null || lista.Count == 0)
+                return new List<IComponenteAstronomico>();
+
+            return lista.GroupBy(e => e.Id).Select(g => g.First()).ToList();
+        }
+
         public async Task<int> AgregarElementoAsync(IComponenteAstronomico elemento)
         {
             var nuevoId = await _repository.AgregarElementoAsync(elemento);
@@ -46,10 +55,31 @@ namespace BLL
             var result = await _repository.ModificarElementoAsync(elemento);
             return result;
         }
-        public async Task<bool> EliminarElementoAsync(int id)
+        public async Task<(int Codigo, string Mensaje)> EliminarElementoAsync(int id)
         {
-            var result = await _repository.BorrarElementoAsync(id);
+            return await _repository.BorrarElementoSeguroAsync(id);
+        }
+
+        public async Task<bool> GuardarRelacionAsync(int idGrupo, int idElemento)
+        {
+            var result = await _repository.GuardarRelacion(idGrupo, idElemento);
             return result;
+        }
+
+        public async Task<bool> EliminarRelacionAsync(int idGrupo, int idElemento)
+        {
+            var result = await _repository.EliminarRelacion(idGrupo, idElemento);
+            return result;
+        }
+        public async Task<List<TipoAstronomicoDTO>> TraerTiposAstronomicos() { 
+            var result = await _repository.ObtenerTipoAstronomico();
+            return result ?? new List<TipoAstronomicoDTO>();
+        }
+
+        public async Task<IComponenteAstronomico?> ObtenerElementoPorIdAsync(int Id)
+        {
+            var elemento = await _repository.ObtenerElementoPorIdAsync(Id);
+            return elemento ?? null;
         }
     }
 }

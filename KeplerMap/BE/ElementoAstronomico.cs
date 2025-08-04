@@ -10,7 +10,6 @@ namespace BE
         public double Distancia { get; set; }
         public bool EsGrupo { get; set; } = false;
         public IComponenteAstronomico Padre { get; set; }
-        public TipoAstronomico TipoObjeto { get; set; }
         public int? PadreId { get; set; }
 
         public void Agregar(IComponenteAstronomico componente)

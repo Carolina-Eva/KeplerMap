@@ -11,7 +11,6 @@ namespace BE
         public IComponenteAstronomico Padre { get; set; }
         public bool EsGrupo { get; set; } = true;
         public int? PadreId { get; set; }
-        public TipoAstronomico TipoObjeto { get; set; }
 
         public List<IComponenteAstronomico> _hijos = new();
         public void Agregar(IComponenteAstronomico componente)
