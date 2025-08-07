@@ -1,0 +1,4 @@
+LookMaker
+Una tienda de moda quiere ofrecer a sus clientes una herramienta interactiva para diseñar sus propios outfits combinando diferentes prendas. Cada outfit comienza con una base (por ejemplo, ropa interior básica o una camiseta simple) y puede ser decorado progresivamente con distintos elementos como sombreros, partes superiores, partes inferiores, calzado y accesorios adicionales (abrigos, bufandas, gafas, etc.).
+
+Objetivo: debe permitir al usuario construir y visualizar outfits mediante la selección de distintas prendas. El sistema debe utilizar el patrón de diseño Decorator, donde cada prenda agregada actúa como un "decorador" que añade propiedades (descripción, estilo, nivel de abrigo, etc.) al outfit base.

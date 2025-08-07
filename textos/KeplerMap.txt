@@ -1,0 +1,6 @@
+KeplerMap
+KeplerMap es una aplicación de escritorio desarrollada como parte de un proyecto académico, cuyo objetivo es permitir la exploración del universo de forma jerárquica y estructurada. La herramienta está pensada para ser utilizada por astrónomos, investigadores y entusiastas del espacio, permitiendo visualizar, clasificar y analizar cuerpos celestes y estructuras astronómicas desde una interfaz intuitiva.
+
+Objetivo: Visualización de la estructura del universo mediante un TreeView interactivo.
+Permitir al usuario agregar, modificar y eliminar objetos astronómicos según su ubicación jerárquica.
+Mostrar los detalles del objeto seleccionado en un panel lateral.

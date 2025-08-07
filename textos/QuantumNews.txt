@@ -1,0 +1,8 @@
+QuantumNews
+QuantumNews es un simulador de agencia de noticias alternativa que publica contenido que oscila entre la ciencia comprobada y los eventos más paranormales e inexplicables. Cada noticia genera reacciones inmediatas de un grupo de observadores con diferentes perfiles:
+
+Racional: Analiza con lógica y acepta evidencia si es suficiente.
+Neutral: Mantiene una opinión ambigua, sin comprometerse.
+Conspiranoico: Desconfía de todo.
+Cada observador reacciona en tiempo real con comentarios únicos según su perfil y el porcentaje de veracidad de la noticia.
+
